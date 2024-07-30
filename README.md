@@ -89,7 +89,7 @@ docker-compose up -d
 
 ## API Examples
 ### Matrix
-Crea la matriz y facorización QR desde ´api-go-matrix´
+Esta API realiza validaciones  de matriz cuadrada para luego crear la matriz y realizar la factorización QR en el servicio´api-go-matrix´
 - Request:
 ```sh
 curl --location 'http://localhost:8080/api/v1/matrix' \
