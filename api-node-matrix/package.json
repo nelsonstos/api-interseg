@@ -1,0 +1,38 @@
+{
+  "name": "api-node-matrix",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon app.js",
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/interseg/api-node-matrix.git"
+  },
+  "keywords": [
+    "node",
+    "express.js",
+    "docker",
+    "API",
+    "Git"
+  ],
+  "author": "Willy N. Santos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/interseg/api-node-matrix/issues"
+  },
+  "homepage": "https://github.com/interseg/api-node-matrix#readme",
+  "dependencies": {
+    "axios": "^1.7.2",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-validator": "^7.1.0",
+    "http-status-codes": "^2.3.0",
+    "nodemon": "^3.1.4"
+  }
+}

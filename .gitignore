@@ -1,0 +1,9 @@
+# Ignorar archivos y directorios específicos de api-go-matrix
+/api-go-matrix/cmd/
+api-go-matrix/.env
+/api-go-matrix/vendor/
+/api-go-matrix/migrations/
+
+# Ignorar archivos y directorios específicos de api-node-matrix
+/api-node-matrix/.env
+/api-node-matrix/node_modules/

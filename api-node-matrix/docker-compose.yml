@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .  # Usa el Dockerfile en el directorio actual
+      args:
+        NODE_ENV: development  # Establece el argumento de construcción para desarrollo
+    ports:
+      - "3000:3000"  # Mapea el puerto 3000 del contenedor al puerto 3000 del host
+    env_file:
+      - .env  # Usa el archivo .env para cargar las variables de entorno
+    volumes:
+      - .:/app  # Sincroniza el directorio de trabajo del host con el contenedor
+    command: npm run dev  # Usa el script de desarrollo para iniciar la aplicación
+    networks:
+      - orion  # Asigna la red personalizada
+
+networks:
+  orion:
+    driver: bridge  # Usa el controlador de red bridge (por defecto)

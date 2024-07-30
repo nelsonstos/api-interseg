@@ -1,0 +1,50 @@
+version: '3.8'
+
+services:
+  api-node-matrix:
+    build:
+      context: ./api-node-matrix  # Especifica el directorio que contiene el Dockerfile
+      args:
+        NODE_ENV: development  # Establece el argumento de construcción para desarrollo
+    ports:
+      - "3000:3000"  # Mapea el puerto 3000 del contenedor al puerto 3000 del host
+    env_file:
+      - ./api-node-matrix/.env  # Usa el archivo .env para cargar las variables de entorno
+    volumes:
+      - ./api-node-matrix:/app  # Sincroniza el directorio de trabajo del host con el contenedor
+    command: npm run dev  # Usa el script de desarrollo para iniciar la aplicación
+    networks:
+      - orion  # Asigna la red personalizada
+
+  api-go-matrix:
+    build:
+      context: ./api-go-matrix  # Especifica el directorio que contiene el Dockerfile
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"  # Mapea el puerto 8080 del contenedor al puerto 8080 del host
+    env_file:
+      - ./api-go-matrix/.env
+    depends_on:
+      - interseg
+    networks:
+      - orion  # Asigna la red personalizada
+
+  interseg:
+    image: postgres:14
+    ports:
+      - "5432:5432"  # Mapea el puerto 5432 del contenedor al puerto 5432 del host
+    environment:
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASS}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - orion  # Asigna la red personalizada
+
+volumes:
+  postgres_data:
+
+networks:
+  orion:
+    driver: bridge  # Usa el controlador de red bridge (por defecto)
