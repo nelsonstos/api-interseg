@@ -117,7 +117,7 @@ curl --location 'http://localhost:8080/api/v1/matrix' \
 }
 ```
 ### Statistics
-Usa el servicio api-go-matrix para crear, factoriza la matriz y obtner las estadisticas.
+Usa el servicio api-go-matrix para crear, factorizar la matriz y obtener las estadisticas.
 - Request:
 ```sh
 curl --location 'http://localhost:3000/api/v1/matrix/statistics' \
