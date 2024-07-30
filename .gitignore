@@ -7,3 +7,5 @@ api-go-matrix/.env
 # Ignorar archivos y directorios específicos de api-node-matrix
 /api-node-matrix/.env
 /api-node-matrix/node_modules/
+
+.env
