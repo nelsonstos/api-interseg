@@ -12,14 +12,10 @@ func SetupRoutes(app *fiber.App) {
 	api := app.Group("/api/v1")
 
 	//Matrix
-	api.Get("/matrix", controllers.Index)
 	api.Post("matrix", controllers.Create)
 
 	//Statistics
 	api.Post("/matrix/stats", controllers.CreateStatistic)
-
-	// Users
-	api.Post("/register", controllers.Register)
 
 	app.Get("/", func(c *fiber.Ctx) error {
 		return c.SendString("¡Welcome to the API!")
