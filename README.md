@@ -1,4 +1,4 @@
-# Proyecto Interseguro Challenge - Matrices y Factorizacion QR
+# Challenge - Matrices y Factorizacion QR
 
 ## Descripción
 
